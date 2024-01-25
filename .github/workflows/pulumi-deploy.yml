@@ -5,10 +5,14 @@ on:
     branches:
       - main
 
+
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+    - name: Change to Pulumi directory
+      run: cd pulumi
     - uses: actions/checkout@v2
     - name: Set up Pulumi
       uses: pulumi/action-install-pulumi-cli@v1
