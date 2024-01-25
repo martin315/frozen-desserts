@@ -22,9 +22,9 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: '14'
-        
+
     - name: Select Pulumi stack
-      run: pulumi stack select <stack-name> --create
+      run: pulumi stack select development --create
       working-directory: pulumi
 
     - name: Run Pulumi up
