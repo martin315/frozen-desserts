@@ -11,8 +11,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: Change to Pulumi directory
-      run: cd pulumi
     - uses: actions/checkout@v2
     - name: Set up Pulumi
       uses: pulumi/action-install-pulumi-cli@v1
@@ -26,6 +24,7 @@ jobs:
         node-version: '14'
     - name: Run Pulumi up
       run: pulumi up --yes
+      working-directory: pulumi
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
