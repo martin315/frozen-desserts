@@ -1,0 +1,10 @@
+name: frozen-desserts
+runtime:
+  name: python
+  options:
+    virtualenv: venv
+description: Deploy a small rails app
+config:
+  pulumi:tags:
+    value:
+      pulumi:template: aws-python
